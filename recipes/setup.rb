@@ -10,12 +10,12 @@ end
 
 file '/etc/motd' do
   action :create
-  content 'The computer is property of Sundeep Beniwal
-HOSTNAME: localhost.localdomain
-IP: 10.0.2.15
-CPU: 2807.998 MHz
-MEMORY: 1016860 kB
-'
+  content "The computer is property of Sundeep Beniwal
+HOSTNAME: #{node['hostname']}
+IP: #{node['ipaddress']}
+CPU: #{node['cpu']['0']['mhz']}
+MEMORY: #{node['memory']['total']}
+"
   owner 'root'
   group 'root'
 end
