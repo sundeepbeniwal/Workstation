@@ -15,3 +15,14 @@ file '/etc/motd' do
   group 'root'
 end
 
+package 'zip' do
+  action :install
+end
+
+package 'unzip' do
+  action :install
+end
+
+package 'tar' do
+  action :install
+end
