@@ -8,16 +8,11 @@ package 'git' do
   action :install
 end
 
-file '/etc/motd' do
-  action :create
-  content "The computer is property of Sundeep Beniwal
-HOSTNAME: #{node['hostname']}
-IP: #{node['ipaddress']}
-CPU: #{node['cpu']['0']['mhz']}
-MEMORY: #{node['memory']['total']}
-"
+template '/etc/motd' do
+  source 'motd.erb'
   owner 'root'
   group 'root'
+  action :create
 end
 
 package 'zip' do
