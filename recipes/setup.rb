@@ -13,6 +13,9 @@ template '/etc/motd' do
   owner 'root'
   group 'root'
   action :create
+  variables(
+  :name => 'Sundeep'
+)
 end
 
 package 'zip' do
